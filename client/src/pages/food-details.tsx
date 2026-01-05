@@ -40,13 +40,17 @@ export function FoodDetails() {
         <div className="aspect-square bg-secondary/20 rounded-3xl flex items-center justify-center text-[8rem] shadow-inner relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#2F6A48_1px,transparent_1px)] [background-size:20px_20px]"></div>
           <span className="relative z-10 animate-in zoom-in duration-500">
-             {food.category === "Fruits" && "🍎"}
-             {food.category === "Vegetables" && "🥦"}
-             {food.category === "Grains & Cereals" && "🌾"}
-             {food.category === "Pulses & Legumes" && "🫘"}
-             {food.category === "Dairy" && "🥛"}
-             {food.category === "Meat & Protein" && "🥩"}
-             {food.category === "Nuts & Seeds" && "🥜"}
+             {food.emoji || (
+               <>
+                 {food.category === "Fruits" && "🍎"}
+                 {food.category === "Vegetables" && "🥦"}
+                 {food.category === "Grains & Cereals" && "🌾"}
+                 {food.category === "Pulses & Legumes" && "🫘"}
+                 {food.category === "Dairy" && "🥛"}
+                 {food.category === "Meat & Protein" && "🥩"}
+                 {food.category === "Nuts & Seeds" && "🥜"}
+               </>
+             )}
           </span>
         </div>
 
@@ -161,7 +165,12 @@ function NutrientRow({ label, value, max, color }: { label: string, value: strin
         <span className="font-medium">{label}</span>
         <span>{value}</span>
       </div>
-      <Progress value={percentage} className="h-2" indicatorClassName={color} />
+      <div className="h-2 w-full bg-secondary/30 rounded-full overflow-hidden">
+        <div 
+          className={cn("h-full rounded-full transition-all duration-500", color)} 
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
     </div>
   );
 }

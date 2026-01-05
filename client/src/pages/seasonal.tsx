@@ -1,13 +1,23 @@
+import { useState } from "react";
 import { foodDatabase } from "@/lib/food-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Sun, CloudRain, Snowflake, Leaf } from "lucide-react";
+import { Calendar, Sun, CloudRain, Snowflake, Leaf, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger 
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 export function SeasonalPage() {
   const currentMonthIndex = new Date().getMonth();
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const currentMonthName = months[currentMonthIndex];
+  const [selectedMonthIndex, setSelectedMonthIndex] = useState(currentMonthIndex);
+  
+  const selectedMonthName = months[selectedMonthIndex];
 
   // Get Season
   const getSeason = (monthIndex: number) => {
@@ -17,16 +27,36 @@ export function SeasonalPage() {
     return { name: "Winter", icon: Snowflake, color: "text-blue-500" };
   };
 
-  const currentSeason = getSeason(currentMonthIndex);
+  const currentSeason = getSeason(selectedMonthIndex);
 
-  const seasonalFoods = foodDatabase.filter(f => f.seasonality.includes(currentMonthIndex));
+  const seasonalFoods = foodDatabase.filter(f => f.seasonality.includes(selectedMonthIndex));
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="text-center space-y-4 py-8">
-        <Badge variant="outline" className="px-4 py-1 text-base rounded-full bg-background">
-          <Calendar className="w-4 h-4 mr-2" /> Current Month: {currentMonthName}
-        </Badge>
+        <div className="flex justify-center items-center gap-4">
+          <Badge variant="outline" className="px-4 py-1 text-base rounded-full bg-background">
+            <Calendar className="w-4 h-4 mr-2" /> 
+            {selectedMonthIndex === currentMonthIndex ? "Current Month: " : "Month: "}
+            {selectedMonthName}
+          </Badge>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="rounded-full">
+                Change Month <ChevronDown className="w-4 h-4 ml-1" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="max-h-[300px] overflow-y-auto">
+              {months.map((month, idx) => (
+                <DropdownMenuItem key={month} onClick={() => setSelectedMonthIndex(idx)}>
+                  {month} {idx === currentMonthIndex && "(Current)"}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
         <h1 className="text-4xl md:text-5xl font-heading font-bold flex items-center justify-center gap-3">
           It's <span className={currentSeason.color}>{currentSeason.name}</span> Season
           <currentSeason.icon className={`w-8 h-8 ${currentSeason.color}`} />
@@ -43,7 +73,7 @@ export function SeasonalPage() {
               <Card className="hover:shadow-md transition-all duration-300 border-dashed hover:border-solid bg-card/50">
                 <CardContent className="p-6 flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
-                    {food.category === "Fruits" ? "🍎" : food.category === "Vegetables" ? "🥦" : "🌾"}
+                    {food.emoji || (food.category === "Fruits" ? "🍎" : food.category === "Vegetables" ? "🥦" : "🌾")}
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">{food.name}</h3>

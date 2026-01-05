@@ -27,7 +27,7 @@ function Router() {
             </p>
             <div className="my-12 p-8 bg-secondary/20 rounded-3xl">
               <p className="font-bold">Created by Nadeem Alam</p>
-              <p className="text-sm opacity-70">Senior Software Engineer & Product Designer</p>
+              <p className="text-sm opacity-70">Software Engineer</p>
             </div>
           </div>
         </Route>

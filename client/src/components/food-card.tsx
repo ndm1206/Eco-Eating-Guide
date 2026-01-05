@@ -38,15 +38,19 @@ export function FoodCard({ food }: FoodCardProps) {
                {/* Pattern overlay */}
                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#2F6A48_1px,transparent_1px)] [background-size:16px_16px]"></div>
                
-               {/* Icon based on category (placeholder logic) */}
+               {/* Icon based on food.emoji or category */}
                <span className="text-4xl filter drop-shadow-sm transform group-hover:scale-110 transition-transform duration-500">
-                  {food.category === "Fruits" && "🍎"}
-                  {food.category === "Vegetables" && "🥦"}
-                  {food.category === "Grains & Cereals" && "🌾"}
-                  {food.category === "Pulses & Legumes" && "🫘"}
-                  {food.category === "Dairy" && "🥛"}
-                  {food.category === "Meat & Protein" && "🥩"}
-                  {food.category === "Nuts & Seeds" && "🥜"}
+                  {food.emoji || (
+                    <>
+                      {food.category === "Fruits" && "🍎"}
+                      {food.category === "Vegetables" && "🥦"}
+                      {food.category === "Grains & Cereals" && "🌾"}
+                      {food.category === "Pulses & Legumes" && "🫘"}
+                      {food.category === "Dairy" && "🥛"}
+                      {food.category === "Meat & Protein" && "🥩"}
+                      {food.category === "Nuts & Seeds" && "🥜"}
+                    </>
+                  )}
                </span>
 
                <div className="absolute top-2 right-2">

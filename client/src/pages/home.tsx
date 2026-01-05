@@ -42,7 +42,12 @@ export function Home() {
               <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20" onClick={() => document.getElementById('explore')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explore Foods
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 bg-background/50 backdrop-blur-sm">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="rounded-full px-8 bg-background/50 backdrop-blur-sm"
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 How it Works
               </Button>
             </div>
@@ -124,7 +129,28 @@ export function Home() {
       </section>
 
       {/* Info Banner */}
-      <section className="bg-secondary/20 rounded-2xl p-8 md:p-12 text-center space-y-6">
+      <section id="how-it-works" className="bg-secondary/20 rounded-2xl p-8 md:p-12 text-center space-y-6 scroll-mt-20">
+        <h2 className="font-heading text-2xl md:text-3xl font-bold">How It Works</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left">
+          <div className="space-y-4 bg-background/50 p-6 rounded-2xl border border-border/50">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-2">🥗</div>
+            <h3 className="font-bold text-lg">1. CO₂ Calculation</h3>
+            <p className="text-sm text-muted-foreground">We calculate the CO₂ footprint by multiplying the average emission factor of a food item by the serving quantity. This includes emissions from farming, processing, and typical transportation.</p>
+          </div>
+          <div className="space-y-4 bg-background/50 p-6 rounded-2xl border border-border/50">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-2">🍎</div>
+            <h3 className="font-bold text-lg">2. Nutrition Analysis</h3>
+            <p className="text-sm text-muted-foreground">Nutritional values are calculated per serving based on standard food database references. We track calories, protein, fats, and essential vitamins to help you stay healthy.</p>
+          </div>
+          <div className="space-y-4 bg-background/50 p-6 rounded-2xl border border-border/50">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl mb-2">⚖️</div>
+            <h3 className="font-bold text-lg">3. Comparison</h3>
+            <p className="text-sm text-muted-foreground">Our dashboard highlights the trade-off between environmental impact and health benefits, providing simple advice to help you find the "sweet spot" for both you and the planet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted/30 rounded-2xl p-8 md:p-12 text-center space-y-6">
         <h2 className="font-heading text-2xl md:text-3xl font-bold">Why Does It Matter?</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left">
           <div className="space-y-2">

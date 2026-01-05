@@ -13,7 +13,8 @@ export interface FoodItem {
   id: string;
   name: string;
   category: FoodCategory;
-  image?: string; // We'll map mock images or icons
+  image?: string; 
+  emoji?: string;
   co2PerServing: number; // kg CO2e
   servingSize: string; // e.g. "1 medium apple (182g)"
   servingGrams: number;
@@ -46,6 +47,7 @@ export const foodDatabase: FoodItem[] = [
     id: "apple",
     name: "Apple",
     category: "Fruits",
+    emoji: "🍎",
     co2PerServing: 0.04,
     servingSize: "1 medium (182g)",
     servingGrams: 182,
@@ -60,6 +62,7 @@ export const foodDatabase: FoodItem[] = [
     id: "banana",
     name: "Banana",
     category: "Fruits",
+    emoji: "🍌",
     co2PerServing: 0.11,
     servingSize: "1 medium (118g)",
     servingGrams: 118,
@@ -74,6 +77,7 @@ export const foodDatabase: FoodItem[] = [
     id: "orange",
     name: "Orange",
     category: "Fruits",
+    emoji: "🍊",
     co2PerServing: 0.09,
     servingSize: "1 fruit (131g)",
     servingGrams: 131,
@@ -88,6 +92,7 @@ export const foodDatabase: FoodItem[] = [
     id: "berries",
     name: "Mixed Berries",
     category: "Fruits",
+    emoji: "🍓",
     co2PerServing: 0.15,
     servingSize: "1 cup (150g)",
     servingGrams: 150,
@@ -104,6 +109,7 @@ export const foodDatabase: FoodItem[] = [
     id: "spinach",
     name: "Spinach",
     category: "Vegetables",
+    emoji: "🥬",
     co2PerServing: 0.05,
     servingSize: "1 cup raw (30g)",
     servingGrams: 30,
@@ -118,6 +124,7 @@ export const foodDatabase: FoodItem[] = [
     id: "potato",
     name: "Potato",
     category: "Vegetables",
+    emoji: "🥔",
     co2PerServing: 0.03,
     servingSize: "1 medium (173g)",
     servingGrams: 173,
@@ -132,6 +139,7 @@ export const foodDatabase: FoodItem[] = [
     id: "tomato",
     name: "Tomato",
     category: "Vegetables",
+    emoji: "🍅",
     co2PerServing: 0.18, // Hothouse can be higher
     servingSize: "1 medium (123g)",
     servingGrams: 123,
@@ -146,6 +154,7 @@ export const foodDatabase: FoodItem[] = [
     id: "broccoli",
     name: "Broccoli",
     category: "Vegetables",
+    emoji: "🥦",
     co2PerServing: 0.12,
     servingSize: "1 cup chopped (91g)",
     servingGrams: 91,
@@ -162,6 +171,7 @@ export const foodDatabase: FoodItem[] = [
     id: "rice",
     name: "Rice (White)",
     category: "Grains & Cereals",
+    emoji: "🍚",
     co2PerServing: 0.60, // High methane
     servingSize: "1 cup cooked (158g)",
     servingGrams: 158,
@@ -176,6 +186,7 @@ export const foodDatabase: FoodItem[] = [
     id: "oats",
     name: "Oats",
     category: "Grains & Cereals",
+    emoji: "🥣",
     co2PerServing: 0.18,
     servingSize: "1/2 cup dry (40g)",
     servingGrams: 40,
@@ -222,6 +233,7 @@ export const foodDatabase: FoodItem[] = [
     id: "beef",
     name: "Beef",
     category: "Meat & Protein",
+    emoji: "🥩",
     co2PerServing: 6.61, // Very High
     servingSize: "3 oz (85g)",
     servingGrams: 85,
@@ -236,6 +248,7 @@ export const foodDatabase: FoodItem[] = [
     id: "chicken",
     name: "Chicken",
     category: "Meat & Protein",
+    emoji: "🍗",
     co2PerServing: 0.58,
     servingSize: "3 oz (85g)",
     servingGrams: 85,
