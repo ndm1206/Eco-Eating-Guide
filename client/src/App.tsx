@@ -11,6 +11,8 @@ import { CalculatorPage } from "@/pages/calculator";
 import { SeasonalPage } from "@/pages/seasonal";
 import NotFound from "@/pages/not-found";
 
+import founderPhoto from "@assets/PASSPORT_SIZE_IMAGE_1767597800309.jpg";
+
 function Router() {
   return (
     <Layout>
@@ -28,7 +30,7 @@ function Router() {
             <div className="my-12 p-8 bg-secondary/10 border border-secondary/20 rounded-3xl flex flex-col items-center gap-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm">
                 <img 
-                  src="/attached_assets/PASSPORT_SIZE_IMAGE_1767597800309.jpg" 
+                  src={founderPhoto} 
                   alt="Nadeem Alam" 
                   className="w-full h-full object-cover"
                 />
