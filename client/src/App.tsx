@@ -25,9 +25,18 @@ function Router() {
             <p className="text-lg text-muted-foreground">
               We believe that every bite counts. By making conscious choices about what we eat, we can significantly reduce our environmental impact while improving our personal health.
             </p>
-            <div className="my-12 p-8 bg-secondary/20 rounded-3xl">
-              <p className="font-bold">Created by Nadeem Alam</p>
-              <p className="text-sm opacity-70">Software Engineer</p>
+            <div className="my-12 p-8 bg-secondary/10 border border-secondary/20 rounded-3xl flex flex-col items-center gap-4">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm">
+                <img 
+                  src="/attached_assets/PASSPORT_SIZE_IMAGE_1767597800309.jpg" 
+                  alt="Nadeem Alam" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="text-center">
+                <p className="font-heading font-bold text-lg">Created by Nadeem Alam</p>
+                <p className="text-sm text-muted-foreground font-medium">Software Engineer</p>
+              </div>
             </div>
           </div>
         </Route>
