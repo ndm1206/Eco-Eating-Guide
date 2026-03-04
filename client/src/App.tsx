@@ -12,6 +12,7 @@ import { SeasonalPage } from "@/pages/seasonal";
 import NotFound from "@/pages/not-found";
 
 import founderPhoto from "@assets/PASSPORT_SIZE_IMAGE_1767597800309.jpg";
+import { Mail, Instagram } from "lucide-react";
 
 function Router() {
   return (
@@ -37,7 +38,17 @@ function Router() {
               </div>
               <div className="text-center">
                 <p className="font-heading font-bold text-lg">Created by Nadeem Alam</p>
-                <p className="text-sm text-muted-foreground font-medium">Software Engineer</p>
+                <p className="text-sm text-muted-foreground font-medium">CSE AIML</p>
+                <div className="mt-2 flex justify-center items-center gap-4">
+                  <a href="mailto:official.ndm1206@gmail.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+                    <Mail className="w-4 h-4" />
+                    <span className="text-xs">Email</span>
+                  </a>
+                  <a href="https://instagram.com/ndm.1426" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+                    <Instagram className="w-4 h-4" />
+                    <span className="text-xs">@ndm.1426</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

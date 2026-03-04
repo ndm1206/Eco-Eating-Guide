@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { foodDatabase, getAllCategories } from "@/lib/food-data";
+import { foods, getAllCategories } from "@/lib/food-data-enhanced";
 import { FoodCard } from "@/components/food-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ export function Home() {
   const categories = getAllCategories();
 
   const filteredFood = useMemo(() => {
-    return foodDatabase.filter((food) => {
+    return foods.filter((food) => {
       const matchesSearch = food.name.toLowerCase().includes(search.toLowerCase());
       const matchesCategory = selectedCategory ? food.category === selectedCategory : true;
       return matchesSearch && matchesCategory;

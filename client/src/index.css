@@ -73,8 +73,8 @@
   --muted-foreground: 146 10% 40%;
 
   /* Earthy Orange Accent */
-  --accent: 28 65% 90%; /* Light orange bg */
-  --accent-foreground: 25 70% 35%; /* Dark orange text */
+  --accent: 28 65% 90%;
+  --accent-foreground: 25 70% 35%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
@@ -85,10 +85,10 @@
 
   --radius: 0.75rem;
 
-  /* Chart Colors for Sustainability Ratings */
-  --chart-1: 146 38% 45%; /* Green (Good) */
-  --chart-2: 45 90% 50%;  /* Yellow (Moderate) */
-  --chart-3: 0 70% 60%;   /* Red (High Impact) */
+  /* Chart Colors */
+  --chart-1: 146 38% 45%;
+  --chart-2: 45 90% 50%;
+  --chart-3: 0 70% 60%;
   --chart-4: 200 60% 50%;
   --chart-5: 280 60% 60%;
 }
